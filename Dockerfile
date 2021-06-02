@@ -10,7 +10,12 @@ RUN set -e; \
 	cd /defaults/games/minetest/mods; \
 	git clone --recursive https://github.com/minetest-mods/irc.git; \
 	git clone https://github.com/ShadowNinja/minetest-irc_commands.git irc_commands; \
-	git clone https://github.com/minetest-mods/signs_api.git; \
+	git clone https://gitlab.com/VanessaE/signs_lib.git; \
+	git clone https://gitlab.com/VanessaE/basic_materials.git; \
 	git clone https://github.com/timcu/irc_builder.git; \
 	cd /; \
-	apk del --purge git; \
+	apk del --purge git;
+
+COPY minetest.conf /config/.minetest/main-config/minetest.conf
+COPY minetest.conf /config/.minetest/minetest.conf
+
