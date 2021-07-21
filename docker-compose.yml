@@ -9,7 +9,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-        - CLI_ARGS=--gameid minetest
+        - CLI_ARGS=--gameid minetest --seed 7625269546119178207
     depends_on:
       - irc
   irc:
