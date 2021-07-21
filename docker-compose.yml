@@ -20,6 +20,12 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+  file_server:
+    image: nginx
+    ports:
+      - 80:80/tcp
+    volumes:
+      - ./http:/usr/share/nginx/html:ro
 
 volumes:
   minetest_data: {}
