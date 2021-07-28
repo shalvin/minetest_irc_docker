@@ -1,11 +1,30 @@
 <html>
+	<head>
+		<!-- <link rel="stylesheet" href="bulma.css"> -->
+		<title>CoderDojo Downloads</title>
+	</head>
 	<body>
-	<h2>Minetest</h2>
-	<h3>Windows</h3>
+	<h2>
+		Minetest Exercise Files
+	</h2>
+	<h3>
+		Windows
+	</h3>
 	<ol>
-		<li><a href="files/minetest-5.4.1-win32.zip">Minetest 32-bit</a> OR <a href="files/minetest-5.4.1-win64.zip">64-bit</a></li>
+		<li><a class="x86-link" href="files/minetest-5.4.1-win32.zip">Minetest 32-bit</a><a class="x64-link" href="files/minetest-5.4.1-win64.zip">Minetest 64-bit</a></li>
 		<li><a href="files/python-3.9.5-amd64.exe">Python</a></li>
 		<li><a href="files/pycharm-community-2021.1.3.exe">Pycharm</a></li>
 	</ol>
+	<script>
+		function is_x64() {
+			return /x64/i.test(navigator.userAgent);
+		}
+		
+		if (is_x64()) {
+			document.querySelectorAll('.x86-link').forEach((el) => el.style.display = 'none');
+		} else {
+			document.querySelectorAll('.x64-link').forEach((el) => el.style.display = 'none');
+		}
+	</script>
 	</body>
 </html>
