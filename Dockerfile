@@ -13,9 +13,7 @@ RUN set -e; \
 	git clone https://gitlab.com/VanessaE/signs_lib.git; \
 	git clone https://gitlab.com/VanessaE/basic_materials.git; \
 	git clone https://github.com/timcu/irc_builder.git; \
+	git clone https://github.com/timcu/builder_police.git; \
 	cd /; \
 	apk del --purge git;
-
-COPY minetest.conf /config/.minetest/main-config/minetest.conf
-COPY minetest.conf /config/.minetest/minetest.conf
 

@@ -4,19 +4,20 @@ services:
     image: minetest_irc
     volumes:
       - minetest_data:/config/.minetest
+      - ./minetest.conf:/config/.minetest/main-config/minetest.conf
     ports:
       - 30000:30000/udp
     environment:
       - PUID=1000
       - PGID=1000
-        - CLI_ARGS=--gameid minetest --seed 7625269546119178207
+      - CLI_ARGS=--gameid minetest
     depends_on:
       - irc
   irc:
     image: linuxserver/ngircd
     ports:
-      - 6667:6667
-      - 6697:6697
+#      - 6667:6667
+      - 6697:6667
     environment:
       - PUID=1000
       - PGID=1000
