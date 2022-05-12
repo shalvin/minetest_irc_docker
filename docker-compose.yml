@@ -15,12 +15,15 @@ services:
       - irc
   irc:
     image: linuxserver/ngircd
+    hostname: irc
     ports:
-#      - 6667:6667
-      - 6697:6667
+      - 6667:6667
+      - 6697:6697
     environment:
       - PUID=1000
       - PGID=1000
+    volumes:
+      - ./irc:/config:ro
   file_server:
     image: nginx
     ports:
